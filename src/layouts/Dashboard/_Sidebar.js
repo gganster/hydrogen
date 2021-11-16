@@ -4,9 +4,49 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-      <div className="w-60 min-h-screen bg-indigo-900">
-        <div className="fixed top-0">
-          f
+      <div className="flex w-60 min-h-screen h-screen max-h-screen bg-indigo-900 overflow-y-hidden"
+           style={{minWidth: "15rem", maxWidth: "15rem"}}>
+        <div className="w-60 overflow-y-scroll">
+          <p>start</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>fe</p>
+          <p>end</p>
+
         </div>
       </div>
   )

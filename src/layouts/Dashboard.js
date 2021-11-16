@@ -9,8 +9,8 @@ const Dashboard = (props) => {
   return (
     <div className="min-h-screen flex flex-row">
       <Sidebar />
-      <div className="flex flex-col-reverse w-full h-full">
-        <div className="flex-1 bg-gray-100">
+      <div className="flex flex-col-reverse w-full h-full max-h-screen min-h-screen">
+        <div className="flex-1 bg-gray-100 max-h-full" style={{overflowY: "scroll"}}>
           {children}
         </div>
         <Header />

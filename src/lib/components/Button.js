@@ -40,7 +40,7 @@ const Button = (props) => {
       onClick={onClick}
       className={"inline-block rounded mr-4 mb-2.5 " + `${cursorType} ` +
                  `${fontSize} ${buttonPaddingSize} ${backgroundColor} ${textColor} ${className}`}>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center select-none">
         {children}
         {loading &&
           <Spinner

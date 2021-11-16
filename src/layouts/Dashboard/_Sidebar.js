@@ -1,3 +1,4 @@
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import {useState} from "react";
 
 const Sidebar = () => {
@@ -6,7 +7,7 @@ const Sidebar = () => {
   return (
       <div className="flex w-60 min-h-screen h-screen max-h-screen bg-indigo-900 overflow-y-hidden"
            style={{minWidth: "15rem", maxWidth: "15rem"}}>
-        <div className="w-60 overflow-y-scroll">
+        <PerfectScrollbar className="w-60 overflow-y-scroll">
           <p>start</p>
           <p>fe</p>
           <p>fe</p>
@@ -47,7 +48,7 @@ const Sidebar = () => {
           <p>fe</p>
           <p>end</p>
 
-        </div>
+        </PerfectScrollbar>
       </div>
   )
 }

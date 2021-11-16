@@ -1,0 +1,18 @@
+.spinner {
+  border-right-color: transparent!important;
+  border-radius: 50%;
+
+  animation-name: spin;
+  animation-duration: 850ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}

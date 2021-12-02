@@ -6,6 +6,7 @@ import Card from "./Card";
 
 //-------------------------- FORM -------------------------------//
 import TextInput from "./TextInput";
+import TextArea from "./TextArea";
 
 export {
   Button,
@@ -13,5 +14,6 @@ export {
   Alert,
   Collapse,
   Card,
-  TextInput
+  TextInput,
+  TextArea
 }

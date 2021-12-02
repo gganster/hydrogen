@@ -1,6 +1,6 @@
 import {useState} from "react";
 import { Link } from "react-router-dom";
-import {Button, Spinner, Alert, Collapse, TextInput, Card} from "lib/components";
+import {Button, Spinner, Alert, Collapse, TextInput, Card, TextArea} from "lib/components";
 
 const Overview = () => {
   const [value, setValue] = useState("");
@@ -10,7 +10,7 @@ const Overview = () => {
       <p>overview</p>
       <Card>
         <TextInput value={value} onChange={setValue} label="test" />
-        <TextInput value={"fz"} onChange={setValue} label="test" disabled/>
+        <TextArea value={value} onChange={setValue} label="test"/>
       </Card>
     </div>
   )

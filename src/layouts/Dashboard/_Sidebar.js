@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faUser, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
+import Logo from "assets/img/hydrogen.png";
+
 const Sidebar = (props) => {
   const {access, routes, layouts} = useRouterConfig();
   const {
@@ -38,9 +40,10 @@ const Sidebar = (props) => {
   }
 
   return (
-      <div className={`flex flex-col min-h-screen h-screen max-h-screen bg-indigo-900 overflow-y-hidden pt-16 pb-4 w-60 ${isOpen ? "ml-0" : "-ml-60"}`}
+      <div className={`flex flex-col min-h-screen h-screen max-h-screen bg-indigo-900 overflow-y-hidden pt-4 pb-4 w-60 ${isOpen ? "ml-0" : "-ml-60"}`}
            style={{minWidth: "15rem", maxWidth: "15rem", transition: "margin 0.3s ease-out"}}>
         <PerfectScrollbar className="w-60 overflow-y-scroll p-y-2">
+          <img src={Logo} className="w-full mb-8" />
           {renderLinks()}
         </PerfectScrollbar>
         <Link to=""

@@ -3,8 +3,8 @@ const Checkbox = (props) => {
     label,
     value,
     onChange,
-    disabled,
-    invalid,
+    disabled, //TODO
+    invalid, //TODO
     className,
     style,
   } = props;

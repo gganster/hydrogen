@@ -30,7 +30,10 @@ const TextInput = (props) => {
         <span className="block text-gray-600 mb-1">{label}</span>
       : <></>}
       {disabled ? 
-        <span className={`flex items-center h-9 w-full px-2 rounded bg-gray-300 ${value ? "text-gray-700" : "text-gray-500"}`}>
+        <span className={`flex items-center h-9 w-full px-2 rounded bg-gray-300 ` + 
+                         `${value ? "text-gray-700" : "text-gray-500"} ` +
+                         `${inputClassName}`}
+              style={inputStyle}>
           {value ? value : placeholder}
         </span>
       :

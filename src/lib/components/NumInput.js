@@ -1,7 +1,6 @@
 import * as PT from "prop-types";
-import React from "react";
 
-const TextArea = (props) => {
+const NumInput = (props) => {
   const {
     value,
     onChange,
@@ -14,6 +13,8 @@ const TextArea = (props) => {
     style,
     inputClassName,
     inputStyle,
+    min,
+    max
   } = props;
 
   const _onKeyDown = (e) => {
@@ -22,7 +23,7 @@ const TextArea = (props) => {
   }
 
   const _onChange = (e) => {
-    if (onChange && !disabled) onChange(e.target.value);
+    if (onChange && !disabled) onChange(parseInt(e.target.value));
   }
 
   return (
@@ -31,23 +32,26 @@ const TextArea = (props) => {
         <span className="block text-gray-600 mb-1">{label}</span>
       : <></>}
       {disabled ? 
-        <span className={`inline-block h-9 w-full p-2 rounded bg-gray-300 ` + 
+        <span className={`flex items-center h-9 w-full px-2 rounded bg-gray-300 ` +
                          `${value ? "text-gray-700" : "text-gray-500"} ` +
-                        `${inputClassName}`}
-              style={{minHeight: 150, ...inputStyle}}>
+                         `${inputClassName}`}
+              style={inputStyle}>
           {value ? value : placeholder}
         </span>
       :
-      <textarea
-             value={value}
-             onChange={_onChange}
-             onKeyDown={_onKeyDown}
-             placeholder={placeholder}
-             style={inputStyle}
-             className={`${inputClassName} h-9 w-full px-2 rounded `+ 
-                        `${invalid ? "border-red-400" : "border-gray-200"} ` +
-                        `bg-white border `}
-             style={{minHeight: 150, ...inputStyle}} />
+        <input type="number"
+              value={value}
+              onChange={_onChange}
+              onKeyDown={_onKeyDown}
+              placeholder={placeholder}
+              style={inputStyle}
+              className={`${inputClassName} h-9 w-full px-2 rounded `+ 
+                          `${invalid ? "border-red-400" : "border-gray-200"} ` +
+                          `bg-white border `}
+              style={inputStyle}
+              min={min}
+              max={max}
+        />
       }
       {invalid ? 
         <span className="block text-red-500">{invalid}</span>
@@ -56,7 +60,7 @@ const TextArea = (props) => {
   )
 }
 
-TextArea.defaultProps = {
+NumInput.defaultProps = {
   disabled: false,
   placeholder: "",
   className: "",
@@ -65,7 +69,7 @@ TextArea.defaultProps = {
   inputStyle: {}
 }
 
-TextArea.propTypes = {
+NumInput.propTypes = {
   value: PT.string,
   onChange: PT.func.isRequired,
   onEnterPressed: PT.func,
@@ -79,4 +83,4 @@ TextArea.propTypes = {
   inputStyle: PT.object
 }
 
-export default TextArea;
+export default NumInput;

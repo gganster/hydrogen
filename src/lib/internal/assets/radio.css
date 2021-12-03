@@ -1,0 +1,68 @@
+/* Customize the label (the container) */
+.radio_container {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #444;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio_label {
+  position: relative;
+  top: -2px
+}
+
+/* Hide the browser's default radio */
+.radio_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio */
+.radio_checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border: 1px solid #CCC;
+  border-radius:50px;
+}
+
+
+/* When the radio is checked, add a blue background */
+.radio_container input:checked ~ .radio_checkmark {
+  background-color: #524eca;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.radio_checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.radio_container input:checked ~ .radio_checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.radio_container .radio_checkmark:after {
+  left: 5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border: solid white;
+  background-color: white;
+  border-radius: 50px;
+}

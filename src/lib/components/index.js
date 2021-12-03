@@ -9,6 +9,8 @@ import Divider from "./Divider"
 import TextInput from "./Form/TextInput";
 import TextArea from "./Form/TextArea";
 import NumInput from "./Form/NumInput";
+import Checkbox from "./Form/Checkbox";
+import RadioGroup from "./Form/RadioGroup";
 
 export {
   Button,
@@ -19,5 +21,7 @@ export {
   Divider,
   TextInput,
   TextArea,
-  NumInput
+  NumInput,
+  Checkbox,
+  RadioGroup
 }

@@ -6,9 +6,9 @@ import Card from "./Card";
 import Divider from "./Divider"
 
 //-------------------------- FORM -------------------------------//
-import TextInput from "./TextInput";
-import TextArea from "./TextArea";
-import NumInput from "./NumInput";
+import TextInput from "./Form/TextInput";
+import TextArea from "./Form/TextArea";
+import NumInput from "./Form/NumInput";
 
 export {
   Button,

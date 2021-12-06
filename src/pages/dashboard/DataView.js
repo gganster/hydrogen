@@ -32,7 +32,6 @@ const DataView = () => {
         <Table header={["id", "name", "surname", "actions"]}
               data={tableData}
               renderItem={renderItem} />
-        <Divider className="mt-4" />
       </Card>
       <Card className="mt-6">
         CalendarView

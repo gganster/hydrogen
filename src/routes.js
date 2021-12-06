@@ -5,9 +5,11 @@ import DashboardLayout from "layouts/Dashboard";
 
 import Login from "pages/blank/login";
 
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard, faChartBar, faHome } from "@fortawesome/free-solid-svg-icons";
+
 import Overview from "pages/dashboard/Overview";
 import Components from "pages/dashboard/Components";
+import DataView from "pages/dashboard/DataView";
 
 const useRouterConfig = () => {
   const history = useHistory();
@@ -50,8 +52,9 @@ const useRouterConfig = () => {
   */
   const routes = [
     {name: "login", route: "", type: "custom", layout: "blank", access: "public", component: Login, hide: true},
-    {name: "overview", route: "", type: "custom", layout: "dashboard", access: "public", component: Overview},
-    {name: "Basic components", route: "components", layout: "dashboard", access: "public", component: Components, icon: faCoffee}
+    {name: "overview", route: "", type: "custom", layout: "dashboard", access: "public", component: Overview, icon: faHome},
+    {name: "Basic components", route: "components", layout: "dashboard", access: "public", component: Components, icon: faAddressCard},
+    {name: "Data view", route: "dataview", layout: "dashboard", access: "public", component: DataView, icon: faChartBar}
   ];
 
   return {access, layouts, routes};

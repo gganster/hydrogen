@@ -12,6 +12,9 @@ import NumInput from "./Form/NumInput";
 import Checkbox from "./Form/Checkbox";
 import RadioGroup from "./Form/RadioGroup";
 
+//-------------------------- DataView -------------------------------//
+import Table from "./DataView/Table";
+
 export {
   Button,
   Spinner,
@@ -23,5 +26,6 @@ export {
   TextArea,
   NumInput,
   Checkbox,
-  RadioGroup
+  RadioGroup,
+  Table
 }

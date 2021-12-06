@@ -14,6 +14,7 @@ import RadioGroup from "./Form/RadioGroup";
 
 //-------------------------- DataView -------------------------------//
 import Table from "./DataView/Table";
+import Calendar from "./DataView/Calendar";
 
 export {
   Button,
@@ -27,5 +28,6 @@ export {
   NumInput,
   Checkbox,
   RadioGroup,
-  Table
+  Table,
+  Calendar
 }

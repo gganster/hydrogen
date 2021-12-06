@@ -1,4 +1,4 @@
-import {Card, Divider, Table} from "lib/components";
+import {Calendar, Card, Divider, Table} from "lib/components";
 
 const DataView = () => {
 
@@ -19,13 +19,21 @@ const DataView = () => {
   )
 
   return (
-    <Card>
-      DataView
-      <Divider className="mt-4" />
-      <Table header={["id", "name", "surname", "actions"]}
-             data={data}
-             renderItem={renderItem} />
-    </Card>
+    <>
+      <Card>
+        TableView
+        <Divider className="mt-4" />
+        <Table header={["id", "name", "surname", "actions"]}
+              data={data}
+              renderItem={renderItem} />
+        <Divider className="mt-4" />
+      </Card>
+      <Card className="mt-6">
+        CalendarView
+        <Divider className="mt-4" />
+        <Calendar height={500} />
+      </Card>
+    </>
   )
 }
 

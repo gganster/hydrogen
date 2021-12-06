@@ -1,0 +1,17 @@
+.table_container {
+  overflow-x: auto;
+}
+
+.table_container thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+.table_container tbody tr {
+  border-top-width: 1px;
+  text-align: left;
+}
+
+.table_container tbody td, .table_container tbody th {
+  padding: 12px;
+}

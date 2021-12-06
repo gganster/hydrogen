@@ -1,4 +1,4 @@
-import {Calendar, Card, Divider, Table} from "lib/components";
+import {Calendar, Card, Divider, Table, LineChart} from "lib/components";
 import { useState } from "react";
 
 const DataView = () => {
@@ -39,6 +39,13 @@ const DataView = () => {
         <Divider className="mt-4" />
         <Calendar height={500}
                   events={dateData}/>
+      </Card>
+      <Card className="mt-6">
+        LineChartView
+        <Divider className="mt-4" />
+        <LineChart categories={["L", "M", "M", "J", "V"]}
+                   series={[{name: "test", data: [3, 4, 2, 7, 5, 8]}]}
+                   forceYStartTo0={false} />
       </Card>
     </>
   )

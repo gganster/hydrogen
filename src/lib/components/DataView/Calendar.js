@@ -9,32 +9,39 @@ const Calendar = (props) => {
   const {
     className,
     style,
-    events,
+    events, //mandatories: {title:string, start:jsDate, end:jsDate, extendedProps:object}
     onResize,
     onDrop,
+    onEventClick,
+    onDateSelect,
     height
   } = props;
 
   return (
-    <div className=""
+    <div className={`${className} ${onEventClick ? "calendar_event_pointer" : ""}`}
          style={{height, ...style}}>
       <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin, timeGridPlugin ]}
-        //themeSystem="bootstrap"
+        plugins={[
+          dayGridPlugin,
+          timeGridPlugin,
+          interactionPlugin,
+        ]}
         initialView="timeGridWeek"
         locales={[frLocale]}
         locale="fr"
-        selectable
-        editable
-        scrollTimeReset={false}
-        events={[]}
-        dateClick={() => {}}
-        select={() => {}}
-        eventClick={() => {}}
-        eventResize={() => {}}
-        eventDrop={() => {}}
         height="100%"
-        allDaySlot={false} />
+        allDaySlot={false}
+        scrollTimeReset={false}
+
+        selectable={onDateSelect}
+        editable={onResize && onDrop}
+        disableResize={true}
+        events={events ?? []}
+        select={onDateSelect}
+        eventClick={onEventClick}
+        eventResize={onResize}
+        eventDrop={onDrop}
+      />
     </div>
   )
 }

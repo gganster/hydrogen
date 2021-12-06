@@ -1,8 +1,14 @@
 import {Calendar, Card, Divider, Table} from "lib/components";
+import { useState } from "react";
 
 const DataView = () => {
 
-  const data = [
+  const [dateData, setDateData] = useState([
+    {title: "slot 1", start: new Date(1638782970000), end: new Date(1638793770000)}
+  ])
+  console.log(dateData);
+
+  const tableData = [
     {uid: 0, name: "Guilian", surname: "Guilian"},
     {uid: 1, name: "Bastien", surname: "Thomas"},
     {uid: 2, name: "Coureau", surname: "Curtis"},
@@ -24,14 +30,15 @@ const DataView = () => {
         TableView
         <Divider className="mt-4" />
         <Table header={["id", "name", "surname", "actions"]}
-              data={data}
+              data={tableData}
               renderItem={renderItem} />
         <Divider className="mt-4" />
       </Card>
       <Card className="mt-6">
         CalendarView
         <Divider className="mt-4" />
-        <Calendar height={500} />
+        <Calendar height={500}
+                  events={dateData}/>
       </Card>
     </>
   )

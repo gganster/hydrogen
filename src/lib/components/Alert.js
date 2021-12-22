@@ -3,7 +3,8 @@ const Alert = (props) => {
     color,
     onClose,
     children,
-    className
+    className,
+    style
   } = props;
 
   const colorCode = color === "primary" ? "bg-blue-500 text-white" :
@@ -13,14 +14,15 @@ const Alert = (props) => {
                     color === "success" ? "bg-green-400 text-white" : "";
 
   return (
-    <div className={`mb-3 p-3 rounded ${colorCode} ${className}`}>
+    <div className={`mb-3 p-3 rounded ${colorCode} ${className}`} style={style}>
       {children}
     </div>
   )
 }
 
 Alert.defaultProps = {
-  color: "primary"
+  color: "primary",
+  style: {}
 }
 
 Alert.propTypes = {

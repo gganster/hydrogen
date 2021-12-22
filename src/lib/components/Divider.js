@@ -20,7 +20,8 @@ const Divider = (props) => {
 }
 
 Divider.defaultProps = {
-  backgroundColor: "white"
+  backgroundColor: "white",
+  style: {}
 }
 
 export default Divider;

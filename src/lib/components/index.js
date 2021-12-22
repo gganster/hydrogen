@@ -3,7 +3,8 @@ import Spinner from "./Spinner";
 import Alert from "./Alert";
 import Collapse from "./Collapse";
 import Card from "./Card";
-import Divider from "./Divider"
+import Divider from "./Divider";
+import Modal from "./Modal";
 
 //-------------------------- FORM -------------------------------//
 import TextInput from "./Form/TextInput";
@@ -24,6 +25,7 @@ export {
   Collapse,
   Card,
   Divider,
+  Modal,
   TextInput,
   TextArea,
   NumInput,

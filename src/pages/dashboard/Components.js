@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Card, Button, Divider, TextInput, TextArea, NumInput, Checkbox, RadioGroup} from "lib/components";
+import {Card, Button, Divider, TextInput, TextArea, NumInput, Checkbox, RadioGroup, Modal} from "lib/components";
 
 const Components = () => {
   const [textinput, setTextinput] = useState("");
@@ -7,6 +7,7 @@ const Components = () => {
   const [textarea, setTextarea] = useState("");
   const [checkbox, setCheckbox] = useState(false);
   const [radio, setRadio] = useState();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <Card>
@@ -21,7 +22,15 @@ const Components = () => {
         {label: "label 2", value: "value 2"},
         {label: "label 3", value: "value 3"}
       ]} onChange={setRadio} value={radio} label="label" />
-      
+      <Button onClick={() => setModalOpen(true)}>Modal</Button>
+      <Modal isOpen={modalOpen} toggle={() => setModalOpen(false)}>
+        <h5 className="text-2xl">Modal title</h5>
+        <Divider className="mt-4" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <div className="flex justify-end mt-4">
+          <Button color="secondary" onClick={() => setModalOpen(false)}>Close</Button>
+        </div>
+      </Modal>
     </Card>
   )
 }

@@ -46,6 +46,8 @@ const useFirebaseAuth = () => {
       dispatch({type: "setLoading", loading: false})
     }
   }, [user.user, user.loading])
+
+  return ({user: user.user, loading: user.loading});
 }
 
 export default useFirebaseAuth;

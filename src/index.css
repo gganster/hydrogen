@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import "./lib/internal/assets/spinner.css";
-@import "./lib/internal/assets/checkbox.css";
-@import "./lib/internal/assets/radio.css";
-@import "./lib/internal/assets/table.css";
-@import "./lib/internal/assets/calendar.css";

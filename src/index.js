@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
+import "./config";
+
 import { ToastContainer } from 'react-toastify';
 import Router from "./lib/internal/Router";
 

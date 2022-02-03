@@ -3,9 +3,11 @@ import { useHistory } from "react-router";
 import BlankLayout from "layouts/Blank";
 import DashboardLayout from "layouts/Dashboard";
 
-import Login from "pages/blank/login";
 
 import { faAddressCard, faChartBar, faHome } from "@fortawesome/free-solid-svg-icons";
+
+import Login from "pages/blank/login";
+import Register from "pages/blank/register";
 
 import Overview from "pages/dashboard/Overview";
 import Components from "pages/dashboard/Components";
@@ -57,6 +59,7 @@ const useRouterConfig = () => {
   */
   const routes = [
     {name: "login", route: "", type: "custom", layout: "blank", access: "public", component: Login, hide: true},
+    {name: "register", route: "register", type: "custom", layout: "blank", access: "public", component: Register, hide: true},
     {name: "overview", route: "", type: "custom", layout: "dashboard", access: "connected", component: Overview, icon: faHome},
     {name: "Basic components", route: "components", layout: "dashboard", access: "connected", component: Components, icon: faAddressCard},
     {name: "Data view", route: "dataview", layout: "dashboard", access: "connected", component: DataView, icon: faChartBar}

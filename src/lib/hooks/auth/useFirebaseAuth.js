@@ -13,7 +13,6 @@ const useFirebaseAuth = () => {
 
   useEffect(() => {
     const subscribe = auth().onAuthStateChanged(async (_user) => {
-      console.log(_user);
       if (_user) {//connect the user
         let counterLimit = 5; //5 attempts to connect
         let meta = await firestore().collection("users")

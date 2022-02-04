@@ -1,6 +1,8 @@
 import useFirebaseAuth from "lib/hooks/auth/useFirebaseAuth";
 import firebase from "firebase";
 import useUser from "contexts/user";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 
 const firestore = firebase.firestore;
 
@@ -11,17 +13,24 @@ const useAuth = () => {
 
 const useAuthUtilities = () => {
   const [user, dispatch] = useUser();
+  const history = useHistory();
 
   const logout = async () => {
-  
+    firebase.auth().signOut();
+    history.push("/")
   }
   
-  const loginWithMail = async () => {
-  
+  const loginWithMail = async (mail, password) => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(mail, password);
+    } catch (e) {
+      console.error(e);
+      toast.error(e.message);
+    }
   }
   
-  const forgotPassword = async () => {
-  
+  const forgotPassword = async (mail) => {
+    await firebase.auth().sendPasswordResetEmail(mail)
   }
   
   const register = async (mail, password, data) => {

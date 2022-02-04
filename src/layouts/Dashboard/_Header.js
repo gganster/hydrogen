@@ -1,15 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faGear } from "@fortawesome/free-solid-svg-icons";
 import {Settings, LogOut} from "react-feather"
-import firebase from "firebase";
+import { useAuthUtilities } from "hooks/useAuth";
 
 const Header = (props) => {
   const {
     onClick
   } = props;
+  const {logout} = useAuthUtilities();
 
   const _logout = () => {
-
+    logout();
   }
 
   return (

@@ -39,7 +39,7 @@ const Select = (props) => {
   };
 
   return (
-    <div className={`${className}`} style={style} >
+    <div className={`${className} mb-3`} style={style} >
       {label ? 
         <span className="block text-gray-600 mb-1">{label}</span>
       : <></>}

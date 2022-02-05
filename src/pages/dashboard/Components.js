@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
-import {Card, Button, Divider, TextInput, TextArea, NumInput, Checkbox, RadioGroup, Modal, Select} from "lib/components";
+import {Card, Button, Divider, TextInput, TextArea, NumInput, Checkbox, RadioGroup, Modal, Select, DateTimePicker} from "lib/components";
+import { DatePicker, TimePicker } from "lib/components";
 
 const Components = () => {
   const [textinput, setTextinput] = useState("");
@@ -9,8 +10,10 @@ const Components = () => {
   const [radio, setRadio] = useState();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectState, setSelectSate] = useState(null);
+  const [date, setDate] = useState(null);
+  const [dateTime, setDateTime] = useState(new Date());
+  const [time, setTime] = useState(new Date());
 
-  useEffect(() => console.log(selectState), [selectState])
   return (
     <Card>
       <Button>Button</Button>
@@ -44,6 +47,9 @@ const Components = () => {
         value={selectState}
         onChange={setSelectSate}
       />
+      <DatePicker value={date} onChange={setDate} label="DatePicker" disabled />
+      <TimePicker value={time} onChange={setTime} label="TimePicker" />
+      <DateTimePicker value={dateTime} onChange={setDateTime} label="DateTimePicker"  />
     </Card>
   )
 }

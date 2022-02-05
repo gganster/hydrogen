@@ -16,6 +16,8 @@ const TimePicker = (props) => {
     label,
     invalid,
     placeholder,//TODO
+    minTime,
+    maxTime,
   } = props;
 
   const _onChange = (e) => {
@@ -42,6 +44,8 @@ const TimePicker = (props) => {
           locale="fr"
           showTimeSelect
           showTimeSelectOnly
+          minTime={minTime}
+          maxTime={maxTime}
         />
       }
       {invalid ? 

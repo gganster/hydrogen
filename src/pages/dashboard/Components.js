@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {Card, Button, Divider, TextInput, TextArea, NumInput, Checkbox, RadioGroup, Modal, Select, DateTimePicker} from "lib/components";
 import { DatePicker, TimePicker } from "lib/components";
+import {setHours, setMinutes} from "date-fns";
 
 const Components = () => {
   const [textinput, setTextinput] = useState("");
@@ -47,8 +48,10 @@ const Components = () => {
         value={selectState}
         onChange={setSelectSate}
       />
-      <DatePicker value={date} onChange={setDate} label="DatePicker" disabled />
-      <TimePicker value={time} onChange={setTime} label="TimePicker" />
+      <DatePicker value={date} onChange={setDate} label="DatePicker" />
+      <TimePicker value={time} onChange={setTime} label="TimePicker"
+                  minTime={setHours(setMinutes(new Date(), 0), 8)}
+                  maxTime={setHours(setMinutes(new Date(), 0), 18)} />
       <DateTimePicker value={dateTime} onChange={setDateTime} label="DateTimePicker"  />
     </Card>
   )

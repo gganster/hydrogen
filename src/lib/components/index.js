@@ -12,6 +12,7 @@ import TextArea from "./Form/TextArea";
 import NumInput from "./Form/NumInput";
 import Checkbox from "./Form/Checkbox";
 import RadioGroup from "./Form/RadioGroup";
+import RichEditor from "./Form/RichEditor";
 
 //-------------------------- DataView -------------------------------//
 import Table from "./DataView/Table";
@@ -31,6 +32,7 @@ export {
   NumInput,
   Checkbox,
   RadioGroup,
+  RichEditor,
   Table,
   Calendar,
   LineChart

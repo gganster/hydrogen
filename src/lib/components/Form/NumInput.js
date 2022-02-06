@@ -27,7 +27,7 @@ const NumInput = (props) => {
   }
 
   return (
-    <div className={`mb-3 ${className}`} style={style}>
+    <div className={`mb-3 ${className}`} style={{minWidth: 200, ...style}}>
       {label ? 
         <span className="block text-gray-600 mb-1">{label}</span>
       : <></>}

@@ -16,7 +16,7 @@ const RichEditor = (props) => {
       value={value}
       onChange={onChange}
       className={className}
-      style={{height: "200px", marginBottom: 35, ...style}}
+      style={{height: "200px", marginBottom: 35, minWidth: 200, ...style}}
     />
   )
 }

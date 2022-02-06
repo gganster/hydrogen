@@ -13,6 +13,7 @@ import Forgot from "pages/blank/forgotPassword";
 import Overview from "pages/dashboard/Overview";
 import Components from "pages/dashboard/Components";
 import DataView from "pages/dashboard/DataView";
+import ProfilePage from "pages/dashboard/Profile";
 
 import useUser from "contexts/user";
 
@@ -63,6 +64,7 @@ const useRouterConfig = () => {
     {name: "register", route: "register", type: "custom", layout: "blank", access: "public", component: Register, hide: true},
     {name: "forgot", route: "forgot", type: "custom", layout: "blank", access: "public", component: Forgot, hide: true},
     {name: "overview", route: "", type: "custom", layout: "dashboard", access: "connected", component: Overview, icon: faHome},
+    {name: "profile", route: "profile", type: "custom", layout: "dashboard", access: "connected", component: ProfilePage, hide: true},
     {name: "Basic components", route: "components", layout: "dashboard", access: "connected", component: Components, icon: faAddressCard},
     {name: "Data view", route: "dataview", layout: "dashboard", access: "connected", component: DataView, icon: faChartBar}
   ];

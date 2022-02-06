@@ -23,7 +23,7 @@ const DatePicker = (props) => {
   }
 
   return (
-    <div className={`${className} mb-2`} style={style}>
+    <div className={`${className} mb-2`} style={{minWidth: 200, ...style}}>
       {label ? 
         <span className="block text-gray-600 mb-1">{label}</span>
       : <></>}

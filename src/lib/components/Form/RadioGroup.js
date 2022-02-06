@@ -24,7 +24,7 @@ const RadioGroup = (props) => {
     <div className={`my-4 pb-4 rounded border border-gray-200 ` +
                     `${label ? "" : "pt-4"} ` +
                     `${className}`}
-         style={{...style}}>
+                    style={{minWidth: 200, ...style}}>
       {label ?
         <span className="inline-block relative px-3 py-0 m-0 bg-white" style={{top: -14, left: 10}}>
           {label}

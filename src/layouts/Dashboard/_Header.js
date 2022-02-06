@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faGear } from "@fortawesome/free-solid-svg-icons";
 import {Settings, LogOut} from "react-feather"
@@ -28,7 +29,9 @@ const Header = (props) => {
 
       {/* RIGHT */}
       <div className="flex text-indigo-900 mr-2" style={{gap: 10}}>
-        <Settings className="cursor-pointer"/>
+        <Link to="/dashboard/profile">
+          <Settings className="cursor-pointer"/>
+        </Link>
         <LogOut   className="cursor-pointer" onClick={_logout}/>
       </div>
     </div>

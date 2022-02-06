@@ -6,7 +6,11 @@ import {
   Switch
 } from "react-router-dom";
 
+import useUser from "contexts/user";
+import useAuth from "hooks/useAuth";
 import useRouterConfig from "routes";
+
+import Loading from "pages/Loading";
 
 import NotFound from "./pages/NotFound";
 import AccessDenied from "./pages/AccessDenied";
@@ -50,6 +54,10 @@ const RouteSystem = (props) => {
 
 const Router = () => {
   const {layouts, routes} = useRouterConfig();
+  const [ui] = useUser();
+  useAuth();
+
+  if (ui.loading) return <Loading />;
 
   return (
     <Switch>

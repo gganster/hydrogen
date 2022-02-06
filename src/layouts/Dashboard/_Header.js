@@ -1,10 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faGear } from "@fortawesome/free-solid-svg-icons";
+import {Settings, LogOut} from "react-feather"
+import { useAuthUtilities } from "hooks/useAuth";
 
 const Header = (props) => {
   const {
     onClick
   } = props;
+  const {logout} = useAuthUtilities();
+
+  const _logout = () => {
+    logout();
+  }
 
   return (
     <div className={`flex items-center justify-between w-full max-h-14 h-14 shadow-md bg-white ` +
@@ -20,7 +27,9 @@ const Header = (props) => {
       <div></div>
 
       {/* RIGHT */}
-      <div>
+      <div className="flex text-indigo-900 mr-2" style={{gap: 10}}>
+        <Settings className="cursor-pointer"/>
+        <LogOut   className="cursor-pointer" onClick={_logout}/>
       </div>
     </div>
   )

@@ -6,8 +6,6 @@ const DataView = () => {
   const [dateData, setDateData] = useState([
     {title: "slot 1", start: new Date(1638782970000), end: new Date(1638793770000)}
   ])
-  console.log(dateData);
-
   const tableData = [
     {uid: 0, name: "Guilian", surname: "Guilian"},
     {uid: 1, name: "Bastien", surname: "Thomas"},

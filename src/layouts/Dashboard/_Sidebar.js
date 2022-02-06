@@ -40,13 +40,14 @@ const Sidebar = (props) => {
   }
 
   return (
-      <div className={`flex flex-col min-h-screen h-screen max-h-screen bg-indigo-900 overflow-y-hidden pt-4 pb-4 w-60 ${isOpen ? "ml-0" : "-ml-60"}`}
-           style={{minWidth: "15rem", maxWidth: "15rem", transition: "margin 0.2s ease-out"}}>
+      <div className={`flex flex-col min-h-screen h-screen max-h-screen overflow-y-hidden pt-4 pb-4 w-60 ${isOpen ? "ml-0" : "-ml-60"}`}
+           style={{minWidth: "15rem", maxWidth: "15rem", transition: "margin 0.2s ease-out", backgroundColor: "#2F3C4E"}}>
         <PerfectScrollbar className="w-60 overflow-y-scroll p-y-2">
           <img src={Logo} className="w-full mb-8" />
           {renderLinks()}
         </PerfectScrollbar>
-        <Link to=""
+        
+        {/*<Link to=""
               className={`flex items-center justify-center h-16 bg-green-500 hover:bg-green-400 text-center text-white ` +
                          `font-semibold text-lg`}>
           <FontAwesomeIcon icon={faUser} className="mr-2" />
@@ -57,7 +58,7 @@ const Sidebar = (props) => {
                         `font-semibold text-lg cursor-pointer`}>
           <FontAwesomeIcon icon={faPowerOff} className="mr-2 mt-1" />
           Se déconnecter
-        </div>
+        </div>*/}
       </div>
   )
 }

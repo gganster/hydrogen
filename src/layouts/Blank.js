@@ -4,8 +4,7 @@ const BlankLayout = (props) => {
   } = props;
 
   return (
-    <div>
-      <p>Layout: Blank</p>
+    <div className="bg-gray-100">
       {children}
     </div>
   )

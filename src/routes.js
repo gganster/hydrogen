@@ -3,16 +3,22 @@ import { useHistory } from "react-router";
 import BlankLayout from "layouts/Blank";
 import DashboardLayout from "layouts/Dashboard";
 
-import Login from "pages/blank/login";
 
 import { faAddressCard, faChartBar, faHome } from "@fortawesome/free-solid-svg-icons";
+
+import Login from "pages/blank/login";
+import Register from "pages/blank/register";
+import Forgot from "pages/blank/forgotPassword";
 
 import Overview from "pages/dashboard/Overview";
 import Components from "pages/dashboard/Components";
 import DataView from "pages/dashboard/DataView";
 
+import useUser from "contexts/user";
+
 const useRouterConfig = () => {
   const history = useHistory();
+  const [ui] = useUser();
 
   /*
     required:
@@ -24,6 +30,8 @@ const useRouterConfig = () => {
   */
   const access = [
     {name: "public", isGranted: true},
+    {name: "connected", isGranted: ui.user !== null},
+    {name: "admin", isGranted: ui.user && ui.user.role === "admin"}
   ];
 
   /*
@@ -34,7 +42,7 @@ const useRouterConfig = () => {
       access:string
   */
   const layouts = [
-    {name: "dashboard", route: "/dashboard", component: DashboardLayout, access: "public"},
+    {name: "dashboard", route: "/dashboard", component: DashboardLayout, access: "connected"},
     {name: "blank", route: "", component: BlankLayout, access: "public"},
   ];
 
@@ -52,9 +60,11 @@ const useRouterConfig = () => {
   */
   const routes = [
     {name: "login", route: "", type: "custom", layout: "blank", access: "public", component: Login, hide: true},
-    {name: "overview", route: "", type: "custom", layout: "dashboard", access: "public", component: Overview, icon: faHome},
-    {name: "Basic components", route: "components", layout: "dashboard", access: "public", component: Components, icon: faAddressCard},
-    {name: "Data view", route: "dataview", layout: "dashboard", access: "public", component: DataView, icon: faChartBar}
+    {name: "register", route: "register", type: "custom", layout: "blank", access: "public", component: Register, hide: true},
+    {name: "forgot", route: "forgot", type: "custom", layout: "blank", access: "public", component: Forgot, hide: true},
+    {name: "overview", route: "", type: "custom", layout: "dashboard", access: "connected", component: Overview, icon: faHome},
+    {name: "Basic components", route: "components", layout: "dashboard", access: "connected", component: Components, icon: faAddressCard},
+    {name: "Data view", route: "dataview", layout: "dashboard", access: "connected", component: DataView, icon: faChartBar}
   ];
 
   return {access, layouts, routes};

@@ -2,6 +2,7 @@ import * as PT from "prop-types";
 
 const TextInput = (props) => {
   const {
+    type,
     value,
     onChange,
     onEnterPressed,
@@ -37,7 +38,7 @@ const TextInput = (props) => {
           {value ? value : placeholder}
         </span>
       :
-      <input type="text"
+      <input type={type}
              value={value}
              onChange={_onChange}
              onKeyDown={_onKeyDown}
@@ -46,7 +47,8 @@ const TextInput = (props) => {
              className={`${inputClassName} h-9 w-full px-2 rounded `+ 
                         `${invalid ? "border-red-400" : "border-gray-200"} ` +
                         `bg-white border `}
-             style={inputStyle} />
+             style={inputStyle}
+          />
       }
       {invalid ? 
         <span className="block text-red-500">{invalid}</span>
@@ -56,6 +58,7 @@ const TextInput = (props) => {
 }
 
 TextInput.defaultProps = {
+  type: "text",
   disabled: false,
   placeholder: "",
   className: "",
@@ -65,6 +68,7 @@ TextInput.defaultProps = {
 }
 
 TextInput.propTypes = {
+  type: PT.oneOf(["text", "password"]),
   value: PT.string,
   onChange: PT.func.isRequired,
   onEnterPressed: PT.func,

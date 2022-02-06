@@ -15,7 +15,7 @@ const useFirebaseAuth = () => {
     const subscribe = auth().onAuthStateChanged(async (_user) => {
       if (_user) {//connect the user
         let counterLimit = 5; //5 attempts to connect
-        let meta = await firestore().collection("users/")
+        let meta = await firestore().collection("users")
                                     .doc(_user.uid)
                                     .get();
         while ((!meta || !meta.exists) && counterLimit > 0) {
@@ -26,7 +26,7 @@ const useFirebaseAuth = () => {
           counterLimit--;
         }
         if (meta.exists) {
-          dispatch({type: "login", user: meta.data()});
+          dispatch({type: "login", user: {...meta.data(), ..._user}});
         } else {
           auth().signOut();
           dispatch({type: "logout"});
@@ -41,11 +41,13 @@ const useFirebaseAuth = () => {
   }, [])
 
   useEffect(() => {
-    if (user.user && user.loading) {
-      history.push("/");
+    if (user.user && !user.loading) {
       dispatch({type: "setLoading", loading: false})
+      history.push("/dashboard");
     }
   }, [user.user, user.loading])
+
+  return ({user: user.user, loading: user.loading});
 }
 
 export default useFirebaseAuth;

@@ -1,5 +1,4 @@
 import {createContext, useReducer, useContext} from 'react';
-import firebase from 'firebase';
 
 const Context = createContext();
 
@@ -13,10 +12,9 @@ function Reducer(state, action) {
     case "login":
       return {
         loading: false,
-        user: Object.assign(firebase.auth().currentUser, action.user)
+        user: action.user
       };
     case "logout":
-      firebase.auth().signOut();
       return {
         user: null,
         loading: false
@@ -41,7 +39,7 @@ const Provider = ({children}) => {
   )
 }
 
-const useCtx = useContext(Context);
+const useUser = () => useContext(Context);
 
-export default useCtx;
+export default useUser;
 export {Provider};

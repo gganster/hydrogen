@@ -16,7 +16,7 @@ const Sidebar = (props) => {
     const links = routes.filter(r => {
                           let accessFilter = access.filter(a => a.name === r.access);
                           if (accessFilter.length === 0)
-                            throw `Route ${r.name} access ${r.access} doesn't match any rule in src/route.js`;
+                            throw new Error(`Route ${r.name} access ${r.access} doesn't match any rule in src/route.js`);
                           return accessFilter[0].isGranted
                         })
                         .filter(r => r.hide !== true);
@@ -42,7 +42,7 @@ const Sidebar = (props) => {
       <div className={`flex flex-col min-h-screen h-screen max-h-screen overflow-y-hidden pt-4 pb-4 w-60 ${isOpen ? "ml-0" : "-ml-60"}`}
            style={{minWidth: "15rem", maxWidth: "15rem", transition: "margin 0.2s ease-out", backgroundColor: "#2F3C4E"}}>
         <PerfectScrollbar className="w-60 overflow-y-scroll p-y-2">
-          <img src={Logo} className="w-full mb-8" />
+          <img alt="logo" src={Logo} className="w-full mb-8" />
           {renderLinks()}
         </PerfectScrollbar>
         

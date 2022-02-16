@@ -2,7 +2,7 @@ const RadioGroup = (props) => {
   const {
     options,
     onChange,
-    invalid, //TODO
+    //invalid, //TODO
     className,
     style,
     value,

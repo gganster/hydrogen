@@ -1,5 +1,4 @@
 import {useState} from "react";
-import { Link } from "react-router-dom";
 import {TextInput, Card, TextArea, RichEditor} from "lib/components";
 
 const Overview = () => {

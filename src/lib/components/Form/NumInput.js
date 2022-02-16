@@ -48,7 +48,6 @@ const NumInput = (props) => {
               className={`${inputClassName} h-9 w-full px-2 rounded `+ 
                           `${invalid ? "border-red-400" : "border-gray-200"} ` +
                           `bg-white border `}
-              style={inputStyle}
               min={min}
               max={max}
         />

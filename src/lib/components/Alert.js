@@ -1,7 +1,7 @@
 const Alert = (props) => {
   const {
     color,
-    onClose,
+    //onClose,
     children,
     className,
     style

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Card, TextInput, Button, Divider} from "lib/components";
 import firebase from "firebase";
 import { toast } from "react-toastify";
@@ -22,7 +22,7 @@ const Profile = () => {
       setLoading(false);
       return;
     }
-    if (confirm != password) {
+    if (confirm !== password) {
       setErrors("Les mots de passe ne correspondent pas");
       setLoading(false);
       return;

@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useEffect} from "react";
 import firebase from "firebase";
 import sleep from "lib/helpers/sleep";
 import useUser from "contexts/user";
@@ -38,14 +38,14 @@ const useFirebaseAuth = () => {
       }
     })
     return (subscribe);
-  }, [])
+  }, [history, dispatch])
 
   useEffect(() => {
     if (user.user && !user.loading) {
       dispatch({type: "setLoading", loading: false})
       history.push("/dashboard");
     }
-  }, [user.user, user.loading])
+  }, [user.user, user.loading, history, dispatch])
 
   return ({user: user.user, loading: user.loading});
 }

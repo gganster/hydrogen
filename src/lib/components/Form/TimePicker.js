@@ -1,6 +1,6 @@
 import React from "react";
 import RDatePicker from "react-datepicker";
-import { registerLocale, setDefaultLocale }  from "react-datepicker";
+import { registerLocale } from "react-datepicker";
 import fr from 'date-fns/locale/fr';
 import moment from "moment";
 

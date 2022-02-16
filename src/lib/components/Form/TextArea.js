@@ -43,7 +43,6 @@ const TextArea = (props) => {
              onChange={_onChange}
              onKeyDown={_onKeyDown}
              placeholder={placeholder}
-             style={inputStyle}
              className={`${inputClassName} h-9 w-full px-2 rounded `+ 
                         `${invalid ? "border-red-400" : "border-gray-200"} ` +
                         `bg-white border `}

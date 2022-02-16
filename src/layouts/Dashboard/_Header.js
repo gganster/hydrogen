@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faGear } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import {Settings, LogOut} from "react-feather"
 import { useAuthUtilities } from "hooks/useAuth";
 

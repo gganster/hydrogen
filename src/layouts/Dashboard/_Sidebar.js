@@ -1,9 +1,8 @@
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import {useState} from "react";
 import useRouterConfig from "routes";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faUser, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import Logo from "assets/img/hydrogen.png";
 

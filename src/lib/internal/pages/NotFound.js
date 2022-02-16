@@ -1,1 +1,2 @@
-export default () => <p>404 Not found</p>
+const NotFound = () => <p>404 Not found</p>
+export default NotFound;

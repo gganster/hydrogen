@@ -1,4 +1,3 @@
-import { useHistory } from "react-router";
 
 import BlankLayout from "layouts/Blank";
 import DashboardLayout from "layouts/Dashboard";
@@ -18,7 +17,6 @@ import ProfilePage from "pages/dashboard/Profile";
 import useUser from "contexts/user";
 
 const useRouterConfig = () => {
-  const history = useHistory();
   const [ui] = useUser();
 
   /*

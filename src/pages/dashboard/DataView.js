@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const DataView = () => {
 
-  const [dateData, setDateData] = useState([
+  const [dateData, ] = useState([
     {title: "slot 1", start: new Date(1638782970000), end: new Date(1638793770000)}
   ])
   const tableData = [

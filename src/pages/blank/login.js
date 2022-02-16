@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import { Link } from "react-router-dom";
 import { Button, Card, TextInput } from "lib/components";
 import { useAuthUtilities } from "hooks/useAuth";

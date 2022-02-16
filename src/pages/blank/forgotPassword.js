@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import {Button, Card, TextInput} from "lib/components";
 import { useAuthUtilities } from "hooks/useAuth";
 import {toast} from "react-toastify";

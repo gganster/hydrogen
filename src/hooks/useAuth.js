@@ -1,6 +1,5 @@
 import useFirebaseAuth from "lib/hooks/auth/useFirebaseAuth";
 import firebase from "firebase";
-import useUser from "contexts/user";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 
@@ -12,7 +11,6 @@ const useAuth = () => {
 }
 
 const useAuthUtilities = () => {
-  const [user, dispatch] = useUser();
   const history = useHistory();
 
   const logout = async () => {

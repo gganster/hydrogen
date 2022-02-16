@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {
   BrowserRouter,
   Route,
-  Redirect,
   Switch
 } from "react-router-dom";
 
@@ -24,23 +23,23 @@ const RouteSystem = (props) => {
   const {access} = useRouterConfig();
   const [isGranted, setIsGranted] = useState(null);
 
-  const _getAccess = (accessName) => {
-    let match = access.filter(i => i.name === accessName);
-
-    if (match.length === 0) throw `access doesn't contain entry with name: ${accessName}`;
-    return match[0];
-  }
-
   useEffect(() => {
-    let access = route.access ? _getAccess(route.access) :
+    const _getAccess = (accessName) => {
+      let match = access.filter(i => i.name === accessName);
+  
+      if (match.length === 0) throw new Error(`access doesn't contain entry with name: ${accessName}`);
+      return match[0];
+    }
+
+    let _access = route.access ? _getAccess(route.access) :
                  layout.access ? _getAccess(layout.access) :
                  null;
 
-    if (access === null) throw `layout ${layout.name} doesn't contain access field`
-    setIsGranted(access.isGranted);
-    if (access.isGranted && access.onSuccess) access.onSuccess(params);
-    if (!access.isGranted && access.onDenied) access.onDenied(params);
-  }, []);
+    if (_access === null) throw new Error(`layout ${layout.name} doesn't contain access field`);
+    setIsGranted(_access.isGranted);
+    if (_access.isGranted && _access.onSuccess) _access.onSuccess(params);
+    if (!_access.isGranted && _access.onDenied) _access.onDenied(params);
+  }, [layout.access, layout.name, params, route.access, access]);
 
 
   return <>
@@ -80,4 +79,5 @@ const Router = () => {
   )
 }
 
-export default () => <BrowserRouter><Router /></BrowserRouter>;
+const GlobalRouter = () => <BrowserRouter><Router /></BrowserRouter>
+export default GlobalRouter;
